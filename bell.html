@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angelus Bell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body style="font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.4; margin: 0; display: flex; flex-direction: column; min-height: 100vh; background: #fff;">
+
+    <!-- Logo at the top -->
+    <div style="text-align: center; padding-top: 1.5rem; font-family: Georgia, serif;">
+      <img src="img/bell.png" alt="Angelus Bell Logo" style="max-height: 75px;" />
+    </div>
+
+    <!-- Auto-play audio -->
+    <audio id="angelus-audio" autoplay hidden>
+      <source src="audio/bell.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Angelus text content -->
+    <div class="angelus-text" style="display: flex; gap: 2rem; justify-content: center; padding: 1.25rem 1rem 0rem;">
+      <div class="column" style="max-width: 340px; text-align: justify;">
+        <h2 style="text-align: center; font-family: Georgia, serif;">English</h2>
+        <p>V. The Angel of the Lord declared unto Mary,</p>
+        <p>R. And she conceived by the Holy Spirit.</p>
+        <p><em>Hail Mary...</em></p>
+        <p>V. Behold the handmaid of the Lord,</p>
+        <p>R. Be it done unto me according to thy word.</p>
+        <p><em>Hail Mary...</em></p>
+        <p>V. And the Word was made flesh,</p>
+        <p>R. And dwelt among us.</p>
+        <p><em>Hail Mary...</em></p>
+        <p>V. Pray for us, O Holy Mother of God,</p>
+        <p>R. That we may be made worthy of the promises of Christ.</p>
+        <p>
+          Let us pray: Pour forth, we beseech thee, O Lord, thy grace into our hearts,
+          that we, to whom the Incarnation of Christ thy Son was made known by the message
+          of an Angel, may by His Passion and Cross be brought to the glory of His Resurrection,
+          through the same Christ our Lord. Amen.
+        </p>
+      </div>
+
+      <div class="column" style="max-width: 340px; text-align: justify;">
+        <h2 style="text-align: center; font-family: Georgia, serif;">Latin</h2>
+        <p>V. Angelus Domini nuntiavit Mariae,</p>
+        <p>R. Et concepit de Spiritu Sancto.</p>
+        <p><em>Ave Maria...</em></p>
+        <p>V. Ecce ancilla Domini,</p>
+        <p>R. Fiat mihi secundum verbum tuum.</p>
+        <p><em>Ave Maria...</em></p>
+        <p>V. Et Verbum caro factum est,</p>
+        <p>R. Et habitavit in nobis.</p>
+        <p><em>Ave Maria...</em></p>
+        <p>V. Ora pro nobis, sancta Dei Genitrix,</p>
+        <p>R. Ut digni efficiamur promissionibus Christi.</p>
+        <p>
+          Oremus: Gratiam tuam, quaesumus, Domine, mentibus nostris infunde:
+          ut qui, Angelo nuntiante, Christi Filii tui Incarnationem cognovimus,
+          per passionem ejus et crucem ad resurrectionis gloriam perducamur.
+          Per eundem Christum Dominum nostrum. Amen.
+        </p>
+      </div>
+    </div>
+
+    <footer style="margin-top: auto; text-align: center; padding: 0.1rem 1rem 1.2rem; font-size: 0.95rem; color: #333;">
+      <a href="https://ProjectAngelus.org" target="_blank" style="color: #1a0dab; text-decoration: none; font-weight: 500; display: inline-block;">© 2025 Project Angelus</a>
+      <p style="margin: 1rem 0;">
+        <a href="https://www.paypal.com/donate/?hosted_button_id=QL29DWKNTHRRJ" target="_blank">
+          <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+               alt="Donate with PayPal button"
+               title="PayPal - The safer, easier way to pay online!" />
+        </a>
+      </p>
+      <p style="font-style: italic; color: #666; margin-top: 1rem;">
+        Promoting the traditional Christian practice of praying The Angelus three times daily.
+      </p>
+    </footer>
+
+    <!-- Script -->
+    <script src="bell.js"></script>
+  </body>
+</html>

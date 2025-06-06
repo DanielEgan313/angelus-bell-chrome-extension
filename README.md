@@ -32,4 +32,3 @@ MIT License. See `LICENSE` file for details.
 
 ---
 
-**“Let the sound of the bell be your invitation to pause.”**

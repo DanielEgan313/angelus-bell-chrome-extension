@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Angelus Bell",
+  "description": "Rings the Angelus Bell at user-selected times with the Angelus prayer in English and Latin.",
+  "version": "1.1",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/bell-16.png",
+      "48": "img/bell-48.png",
+      "128": "img/bell-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "alarms",
+    "storage"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "audio/czech.mp3",
+        "audio/greenbay.mp3",
+        "audio/lebarroux.mp3",
+        "audio/mortagne.mp3",
+        "audio/simple.mp3",
+        "audio/trento.mp3",
+        "bell.html",
+        "img/bell.png"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "img/bell-16.png",
+    "48": "img/bell-48.png",
+    "128": "img/bell-128.png"
+  }
+}

@@ -1,13 +1,3 @@
-// Angelus Bell Chrome Extension – Codebase Entry Point
-
-// This canvas will hold the full extension codebase as it's built step-by-step.
-// We'll start with the manifest and background logic, then add popup UI, settings, and media handling.
-
-// Step 1: manifest.json will be the first file we define.
-// Next, we'll scaffold background.js to handle alarms, and so on.
-
-
-// Icon source: https://thenounproject.com/icon/notre-dame-281410/
 # 🛎️ Angelus Bell – Chrome Extension
 
 The **Angelus Bell** Chrome Extension plays traditional bell chimes at 6:00 AM, 12:00 PM, and 6:00 PM to remind users to pause and pray the Angelus. Inspired by the Catholic tradition, this lightweight tool helps sanctify your day, no matter where you are.

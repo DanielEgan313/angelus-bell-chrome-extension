@@ -1,4 +1,4 @@
-# 🛎️ Angelus Bell – Chrome Extension
+# 🛎️ Angelus Bell – Chrome Extension (Public Beta)
 
 The **Angelus Bell** Chrome Extension plays traditional bell chimes at 6:00 AM, 12:00 PM, and 6:00 PM to remind users to pause and pray the Angelus. Inspired by the Catholic tradition, this lightweight tool helps sanctify your day, no matter where you are.
 

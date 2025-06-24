@@ -43,7 +43,7 @@ Release date: **June 23, 2025**
 
 The Angelus Bell is an ancient Catholic tradition, rung at dawn, midday, and dusk to call the faithful to prayer. This extension revives that practice in the modern digital workspace.
 
-Built by [Daniel Egan](https://github.com/DanielEgan313) – [Project Angelus](https://1873jaystreet.com)
+Built by [Daniel Egan](https://github.com/DanielEgan313) – [Project Angelus](https://projectangelus.org)
 
 ---
 

@@ -7,7 +7,7 @@ The **Angelus Bell** Chrome Extension plays traditional bell chimes at 6:00 AM, 
 ## ✨ Features
 
 - 🔔 Choose from multiple authentic bell sounds
-- 🕰️ Select which Angelus times to enable: Morning, Noon, Evening
+- 🕰️ Select which traditional Angelus Bell times to enable: 6am, 12pm, 6pm
 - 🧘‍♂️ Optional silent mode with visual notifications only
 - 🌐 Works offline and requires no external accounts
 - ⚙️ Easy-to-use popup menu and settings

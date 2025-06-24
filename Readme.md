@@ -32,7 +32,7 @@ Until the extension is available in the Chrome Web Store, you can install it man
 
 ## 📦 Latest Release
 
-See [CHANGELOG.md](./CHANGELOG.md) for version history.
+See [CHANGELOG.md](https://github.com/DanielEgan313/angelus-bell-chrome-extension/blob/main/changelog.md) for version history.
 
 Current version: **v1.2**  
 Release date: **June 23, 2025**

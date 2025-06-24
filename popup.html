@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angelus Bell</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", sans-serif;
+      background: transparent;
+      color: #1c1c1c;
+      min-width: 260px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .popup-container {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 28px 24px 20px 24px;
+      border: 1px solid #f0e7d8;
+      margin: 12px;
+      position: relative;
+    }
+    .version-tag {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-size: 0.7rem;
+      color: #999;
+    }
+
+    .footer-group {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+
+    .footer-version {
+      font-size: 0.7rem;
+      color: #999;
+    }
+
+    .header {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 28px;
+      color: #1a1a1a;
+    }
+
+    .bell-icon {
+      display: block;
+      margin: 0 auto 12px;
+      width: 72px;
+      height: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-label {
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #3d3d3d;
+    }
+
+    .time-selector {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .time-pill {
+      flex: 1;
+      padding: 6px 14px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 16px;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      color: #1c1c1c;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .time-pill.selected {
+      background: #153C87;
+      color: #ffffff;
+      border-color: #153C87;
+      transform: scale(1.02);
+    }
+
+    .time-pill:hover {
+      background: #f0f0f0;
+    }
+
+    .sound-selector {
+      margin-bottom: 20px;
+    }
+
+    .sound-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    select {
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      background: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(0, 0, 0, 0.03);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='1.5' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 12px 7px;
+      padding-right: 32px;
+      flex: 1;
+    }
+
+    #soundToggle.hidden {
+      visibility: hidden;
+    }
+    #soundToggle {
+      background: #fff;
+      border: 1px solid #ccc;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    #soundToggle:hover {
+      background: #f7f7f7;
+      border-color: #999;
+    }
+
+    .support-link {
+      display: block;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b6b6b;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 6px;
+    }
+
+    .footer-line {
+      position: relative;
+      font-size: 0.7rem;
+      color: #999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .version-tag {
+      position: absolute;
+      right: 20px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #e4e4e4;
+        background: transparent;
+      }
+
+      .popup-container {
+        background: #1a1a1c;
+        border-color: #2e2e30;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+
+      .header {
+        color: #ffffff;
+      }
+
+      .section-label {
+        color: #cfcfcf;
+      }
+
+      .time-pill {
+        background: #2a2a2d;
+        color: #e0e0e0;
+        border-color: #3a3a3d;
+        box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.05), 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      .time-pill.selected {
+        background: #4f66d0;
+        color: #ffffff;
+        border-color: #4f66d0;
+      }
+
+      .time-pill:hover {
+        background: #3c3c3f;
+      }
+
+      select {
+        background: #2a2a2d;
+        color: #ffffff;
+        border-color: #444;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+      }
+
+      #soundToggle {
+        background: #2a2a2d;
+        border-color: #444;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+      }
+
+      #soundToggle:hover {
+        background: #3c3c3f;
+        border-color: #666;
+        color: #ffffff;
+      }
+
+      #soundToggleIcon {
+        color: #ffffff;
+      }
+
+      .support-link {
+        color: #a0a0a0;
+      }
+      #soundToggleIcon svg {
+        fill: #ffffff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-container">
+    <img src="img/bell.png" alt="Angelus Bell Icon" class="bell-icon" />
+    <div class="header">Angelus Bell</div>
+
+    <div class="section-label">🔔 Ring Times</div>
+    <div class="time-selector">
+      <button class="time-pill selected" data-time="6">6am</button>
+      <button class="time-pill" data-time="12">12pm</button>
+      <button class="time-pill" data-time="18">6pm</button>
+    </div>
+    <div id="noTimesWarning" style="display:none; color: #666; font-size: 12px; text-align: center; margin: 8px 0 16px 0;">
+      Choose one or more times to enable the Angelus Bell.
+    </div>
+
+    <div class="section-label">🔊 Bell Sound</div>
+    <div class="sound-selector">
+      <div class="sound-row">
+        <select id="bellSound">
+          <option value="no-sound">No Sound</option>
+          <option value="lebarroux.mp3">Abbey of Notre-Dame – Le Barroux, FRA</option>
+          <option value="trento.mp3">Church of St. Marcellus – Trento, IT</option>
+          <option value="czech.mp3">Holy Ghost Cathedral – Hradec Králové, CZ</option>
+          <option value="mortagne.mp3">Notre-Dame Mortagne-au-Perche – Normandy, FRA</option>
+          <option value="simple.mp3" selected>Simple Version – Côtes-d'Armor, FRA</option>
+          <option value="greenbay.mp3">St Mary of the Angels – Green Bay, WI, USA</option>
+        </select>
+        <button id="soundToggle" aria-label="Preview Sound">
+          <span id="soundToggleIcon" style="display: inline-block; width: 16px; height: 16px;"></span>
+        </button>
+      </div>
+      <audio id="inlineBellAudio" preload="auto" aria-hidden="true"></audio>
+    </div>
+
+    <div class="footer-group">
+      <a href="https://ProjectAngelus.org" target="_blank" class="support-link"><strong>Support Project Angelus</strong></a>
+      <a href="https://projectangelus.org/audio-credits" target="_blank" class="support-link">Audio Credits</a>
+      <div class="footer-note">&copy; 2025 ProjectAngelus.org</div>
+      <div class="version-tag" id="versionDisplay">v1.2</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
